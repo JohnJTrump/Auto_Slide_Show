@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- designating the language used as English -->
+	<head>
+        <meta charset="utf-8"> <!-- character set Universal Character Set Transformation Format 8-->
+		<title>Auto Slide Show</title> <!-- will appear on the tab at top of browser -->
+		
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+        
+        
+        <link rel= "stylesheet" type= "text/css" href= "CSS/Auto_Slide_Show.css">  <!-- connecting to CSS styling in seperate folder -->
+	    <script src="JS/Auto_Slide_Show.js" defer></script> <!-- connecting to JavaScript in seperate folder-->
+    </head>
+    <body>
+        <section>
+            <div id="slideshow">
+                <div>
+                    <img src="images/hand 1.jpg">
+                </div>
+                <div>
+                    <img src="images/hand 2.jpg">
+                </div>
+                <div>
+                    <img src="images/hand 3.jpg">
+                </div>
+                <div>
+                    <img src="images/hand 4.jpg">
+                </div>
+                <div>
+                    <img src="images/hand 5.jpg">
+                </div>
+            </div>
+        </section>
+        
+    
+        <script>
+            $("#slideshow > div:gt(0)").hide(); // targets the slide show with JQuery
+            
+            setInterval(function() {        // targets the slide show with JQuery
+                $('#slideshow > div:first')
+                    .fadeOut(1000)
+                    .next()
+                    .fadeIn(1000)
+                    .end()
+                    .appendTo('#slideshow');
+            },3000);
+        </script>
+    
+
+    </body>
+</html>
